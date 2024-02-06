@@ -1,22 +1,17 @@
 name: build-and-push-docker-image
+
 on:
-  # to begin you want to launch this job in main and develop
+  # Trigger the workflow when a workflow run occurs on specified branches and when workflows named "test-backend" are completed
   workflow_run:
-    # on donne les branches à tester (la develop existe pas encore)
     branches:
       - main
-  workflows: ["test-backend"]
-  types: 
-    - completed
+    workflows: ["test-backend"]
+    types: 
+      - completed
 
 jobs:
-  # define job to build and publish docker image
   build-and-push-docker-image:
-    #needs: test-backend
-    #if: github.event_name == 'workflow_run' && github.event.workflow == 'Test Backend' && github.event.result == 'success'
-    # run only when code is compiling and tests are passing
     runs-on: ubuntu-22.04
-    # steps to perform in job
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.5.0
@@ -25,19 +20,15 @@ jobs:
       - name: Build image and push backend
         uses: docker/build-push-action@v3
         with:
-          # relative path to the place where source code with Dockerfile is located
           context: ./TP1/API/
-          # Note: tags has to be all lower-case
           tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-simple-api:latest
           push: ${{ github.ref == 'refs/heads/main' }}
-      # DO the same for database
       - name: Build image and push database
         uses: docker/build-push-action@v3
         with:
           context: ./TP1/Base/
           tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-simple-api-database:latest
           push: ${{ github.ref == 'refs/heads/main' }}
-      # DO the same for httpd
       - name: Build image and push httpd
         uses: docker/build-push-action@v3
         with:
