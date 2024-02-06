@@ -1,0 +1,50 @@
+version: '3.7'
+
+services:
+    backend:
+        image: carottealpha/tp1-backend 
+        networks:
+          - app-network
+        env_file: .env
+        depends_on:
+          - database
+        container_name: api
+        #TODO
+
+    database:
+        image: carottealpha/tp1-database
+        networks:
+          - app-network
+        volumes:
+          - db-data:/var/lib/postgresql/data
+        container_name: pg
+        #TODO
+
+    httpd:
+        image: carottealpha/tp1-httpd
+        ports:
+          - "80:80"
+        networks:
+          - app-network
+        depends_on:
+          - backend
+        container_name: proxy
+        #TODO
+
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+          - 8090:8090
+        networks:
+          - app-network
+        depends_on:
+          - database
+
+
+networks:
+  app-network :
+
+volumes:
+  db-data:
+

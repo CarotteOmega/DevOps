@@ -1,0 +1,55 @@
+version: '3.7'
+
+services:
+    backend:
+        build:
+          context: ./API
+        
+        networks:
+          - app-network
+        env_file: .env
+        depends_on:
+          - database
+        container_name: api
+
+
+        #TODO
+
+    database:
+        build:
+          context: ./Base
+        networks:
+          - app-network
+        volumes:
+          - db-data:/var/lib/postgresql/data
+        container_name: pg
+        #TODO
+
+    httpd:
+        build: ./Htpp
+        ports:
+          - "80:80"
+        networks:
+          - app-network
+        depends_on:
+          - backend
+        container_name: proxy
+        #TODO
+
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+          - 8090:8090
+        networks:
+          - app-network
+        depends_on:
+          - database
+
+
+networks:
+  app-network :
+
+volumes:
+  db-data:
+
