@@ -1,11 +1,11 @@
-name: Build and Push Docker Image
+name: build-and-push-docker-image
 on:
   # to begin you want to launch this job in main and develop
   workflow_run:
     # on donne les branches à tester (la develop existe pas encore)
     branches:
       - main
-  workflows: ["Test Backend"]
+  workflows: ["test-backend"]
   types: 
     - completed
 
