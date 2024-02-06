@@ -12,6 +12,7 @@ on:
 
 jobs:
   build-and-push-docker-image:
+  #petit if pour vérifier que le test est passé
     if: github.event.result.conclusion == 'success'
     runs-on: ubuntu-22.04
     steps:
