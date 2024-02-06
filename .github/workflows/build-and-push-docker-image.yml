@@ -13,8 +13,9 @@ on:
 jobs:
   build-and-push-docker-image:
   #petit if pour vérifier que le test est passé
-    if: github.event.result.conclusion == 'success'
+    
     runs-on: ubuntu-22.04
+    if: ${{ github.ref == 'refs/heads/main' && github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.5.0
