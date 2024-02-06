@@ -10,7 +10,7 @@ on:
 
 jobs:
   test-backend:
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
+   # if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
     runs-on: ubuntu-22.04
     steps:
       # checkout your github code using actions/checkout@v2.5.0
@@ -33,45 +33,4 @@ jobs:
 
        # run: mvn clean verify --file ./TP1/API/simple-api-student-main/simple-api-student-main/pom.xml
 
-  # define job to build and publish docker image
-  build-and-push-docker-image:
-    needs: test-backend
-    # run only when code is compiling and tests are passing
-    runs-on: ubuntu-22.04
-
-    # steps to perform in job
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2.5.0
-          
-      
-      - name: Login to DockerHub
-        run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Build image and push backend
-        uses: docker/build-push-action@v3
-        with:
-          # relative path to the place where source code with Dockerfile is located
-          context: ./TP1/API/
-          # Note: tags has to be all lower-case
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-simple-api:latest
-          push: ${{ github.ref == 'refs/heads/main' }}          
-
-
-          
-    
-      # DO the same for database
-
-      - name: Build image and push database
-        uses: docker/build-push-action@v3
-        with:
-          context: ./TP1/Base/
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-simple-api-database:latest
-          push: ${{ github.ref == 'refs/heads/main' }}
-      # DO the same for httpd
-      - name: Build image and push httpd
-        uses: docker/build-push-action@v3
-        with:
-          context: ./TP1/Htpp/
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-simple-api-httpd:latest
-          push: ${{ github.ref == 'refs/heads/main' }}   
+ 
