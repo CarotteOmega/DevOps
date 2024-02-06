@@ -12,7 +12,7 @@ on:
 
 jobs:
   build-and-push-docker-image:
-  if: github.event.result.conclusion == 'success'
+    if: github.event.result.conclusion == 'success'
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
