@@ -5,7 +5,7 @@ on:
     # on donne les branches à tester (la develop existe pas encore)
     branches:
       - main
-  workflow: [Test Backend]
+  workflow: ["Test Backend"]
     types: 
       - completed
   pull_request:
