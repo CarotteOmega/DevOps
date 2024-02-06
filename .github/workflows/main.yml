@@ -61,13 +61,13 @@ jobs:
       - name: Build image and push database
         uses: docker/build-push-action@v3
         with:
-          context: ./TP1/Base
+          context: ./TP1/Base/
           tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-simple-api-database:latest
           push: ${{ github.ref == 'refs/heads/main' }}
       # DO the same for httpd
       - name: Build image and push httpd
         uses: docker/build-push-action@v3
         with:
-          context: ./TP1/Httpd
+          context: ./TP1/Htpp/
           tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-simple-api-httpd:latest
           push: ${{ github.ref == 'refs/heads/main' }}   
