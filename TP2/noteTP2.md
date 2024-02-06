@@ -50,4 +50,9 @@ jobs:
         #on run maven clean verify dans le dossier du backend
         run: mvn clean verify --file ./TP1/API/simple-api-student-main/simple-api-student-main/pom.xml
 
-        
+
+ATT : 
+![alt text](image.png)
+
+
+![alt text](image-1.png)
