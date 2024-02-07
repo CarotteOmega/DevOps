@@ -4,12 +4,11 @@
   docker_container:
     name: api
     image: carottealpha/tp-devops-simple-api:latest
-    ports: 
-      - "8081:80"
     env:
       URL: "{{ URL }}"
       USER: "{{ usr_name }}"
       PWD: "{{ pwd_usr }}"
+    recreate: yes
   vars:
     ansible_python_interpreter : /usr/bin/python3
 
