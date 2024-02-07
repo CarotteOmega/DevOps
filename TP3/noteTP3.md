@@ -65,3 +65,32 @@ ansible-galaxy collection install community.docker
 ![alt text](image-2.png)
 
 change l'ordre dans playbook important
+
+
+docker network ls
+
+sudo docker network inspect my-network
+
+![alt text](image-3.png)
+
+API
+![alt text](image-4.png)
+
+database
+![alt text](image-5.png)
+
+docker exec <container_id> env
+
+
+sudo docker exec database env
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+HOSTNAME=d8a2f56b059a
+POSTGRES_DB=db
+POSTGRES_USER=usr
+POSTGRES_PASSWORD=pwd
+LANG=en_US.utf8
+PG_MAJOR=14
+PG_VERSION=14.1
+PG_SHA256=4d3c101ea7ae38982f06bdc73758b53727fb6402ecd9382006fa5ecc7c2ca41f
+PGDATA=/var/lib/postgresql/data
+HOME=/root
