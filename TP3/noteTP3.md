@@ -239,3 +239,510 @@ host    all             all             ::1/128                 trust
 # Allow replication connections from localhost, by a user with the
 # replication privilege.
 richa\Documents\IRC\4IRC\DevOps\git\DevOps\TP1>
+
+
+docker inspect api
+[
+    {
+        "Id": "761ea65215c3928c5acde62c3d083eb67c20f7670aff2996ed0e7b39cc170f7a",
+        "Created": "2024-02-07T21:44:44.075961166Z",
+        "Path": "/bin/sh",
+        "Args": [
+            "-c",
+            "java -jar myapp.jar"
+        ],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 1,
+            "Error": "",
+            "StartedAt": "2024-02-07T21:59:20.275913549Z",
+            "FinishedAt": "2024-02-07T21:59:25.698409139Z"
+        },
+        "Image": "sha256:8d37ccc254345e26ebdee406110a8d50a164182d47fdd33a2474bde1302940a5",
+        "ResolvConfPath": "/var/lib/docker/containers/761ea65215c3928c5acde62c3d083eb67c20f7670aff2996ed0e7b39cc170f7a/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/761ea65215c3928c5acde62c3d083eb67c20f7670aff2996ed0e7b39cc170f7a/hostname",
+        "HostsPath": "/var/lib/docker/containers/761ea65215c3928c5acde62c3d083eb67c20f7670aff2996ed0e7b39cc170f7a/hosts",
+        "LogPath": "/var/lib/docker/containers/761ea65215c3928c5acde62c3d083eb67c20f7670aff2996ed0e7b39cc170f7a/761ea65215c3928c5acde62c3d083eb67c20f7670aff2996ed0e7b39cc170f7a-json.log",
+        "Name": "/api",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "tp1_app-network",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/d9bac911567768b41eb8880b76e2cc06e228f6d376bdb0d2377b753357043763-init/diff:/var/lib/docker/overlay2/b2be4ca6a24529ef17b675bc44acf86386c03f2604e41ee4113c3769ac9be25f/diff:/var/lib/docker/overlay2/317c6b1511d23f9726d583a52b5193d85613a5affcbc42d59ea97a89726aad94/diff:/var/lib/docker/overlay2/98faefbb3793ff20d71ffb720c506296570ef1d1a4727ab7ac0393ef2a0feea3/diff:/var/lib/docker/overlay2/7fc597206a530b0740a227fedf5bb115760eef53597cf8555950ad23a527aa81/diff",
+                "MergedDir": "/var/lib/docker/overlay2/d9bac911567768b41eb8880b76e2cc06e228f6d376bdb0d2377b753357043763/merged",
+                "UpperDir": "/var/lib/docker/overlay2/d9bac911567768b41eb8880b76e2cc06e228f6d376bdb0d2377b753357043763/diff",
+                "WorkDir": "/var/lib/docker/overlay2/d9bac911567768b41eb8880b76e2cc06e228f6d376bdb0d2377b753357043763/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "761ea65215c3",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "URL=jdbc:postgresql://database:5432/db",
+                "USER=usr",
+                "PWD=pwd",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto",
+                "MYAPP_HOME=/opt/myapp"
+            ],
+            "Cmd": null,
+            "Image": "carottealpha/tp-devops-simple-api",
+            "Volumes": null,
+            "WorkingDir": "/opt/myapp",
+            "Entrypoint": [
+                "/bin/sh",
+                "-c",
+                "java -jar myapp.jar"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "090b4f37150e4ef97171642e19edb7caa104d747d1ed3b79ac9b3a08a212309b",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "database:service_started",
+                "com.docker.compose.image": "sha256:8d37ccc254345e26ebdee406110a8d50a164182d47fdd33a2474bde1302940a5",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "tp1",
+                "com.docker.compose.project.config_files": "C:\\Users\\richa\\Documents\\IRC\\4IRC\\DevOps\\git\\DevOps\\TP1\\docker-compose copy.yml",
+                "com.docker.compose.project.working_dir": "C:\\Users\\richa\\Documents\\IRC\\4IRC\\DevOps\\git\\DevOps\\TP1",
+                "com.docker.compose.service": "backend",
+                "com.docker.compose.version": "2.15.1"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "3507d211b84e93d127c8543f1e7dee7fed6e4e5e89be05570b2ea6532bd2ce50",        
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {},
+            "SandboxKey": "/var/run/docker/netns/3507d211b84e",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "tp1_app-network": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "api",
+                        "backend",
+                        "761ea65215c3"
+                    ],
+                    "NetworkID": "8d5407e8081e883a4fae3fe10f595d39e4f8e4b189fb1bf63414495ba2bcce8f",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+
+docker inspect pg 
+[
+    {
+        "Id": "de9cb16e6095d7da619f052aa8cfbc0c1b218784348160cbf78ad2f2dbe586f1",
+        "Created": "2024-02-07T21:44:43.947581765Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "postgres"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 4942,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2024-02-07T21:59:19.78146435Z",
+            "FinishedAt": "2024-02-07T21:59:16.75254448Z"
+        },
+        "Image": "sha256:1939e2ade38163c5b459fc8f89cf20a5a6de49ba7402f85e417fffd9636ff097",
+        "ResolvConfPath": "/var/lib/docker/containers/de9cb16e6095d7da619f052aa8cfbc0c1b218784348160cbf78ad2f2dbe586f1/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/de9cb16e6095d7da619f052aa8cfbc0c1b218784348160cbf78ad2f2dbe586f1/hostname",
+        "HostsPath": "/var/lib/docker/containers/de9cb16e6095d7da619f052aa8cfbc0c1b218784348160cbf78ad2f2dbe586f1/hosts",
+        "LogPath": "/var/lib/docker/containers/de9cb16e6095d7da619f052aa8cfbc0c1b218784348160cbf78ad2f2dbe586f1/de9cb16e6095d7da619f052aa8cfbc0c1b218784348160cbf78ad2f2dbe586f1-json.log",
+        "Name": "/pg",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "tp1_app-network",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "Mounts": [
+                {
+                    "Type": "volume",
+                    "Source": "tp1_db-data",
+                    "Target": "/var/lib/postgresql/data",
+                    "VolumeOptions": {}
+                }
+            ],
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/4d36914e26a5002569ee62c107a12af6113dcc8bf1a9229d34bae0c1a61e5ad6-init/diff:/var/lib/docker/overlay2/125505ce7ff1603e74445e0ea20da4dcb4e87bd8f2935fcd90f3fb2249daa0b3/diff:/var/lib/docker/overlay2/8ba7d86aadfe7afd692b27c4c98c40a667c944a10d94edfb34b604051e9a130c/diff:/var/lib/docker/overlay2/1154faddde6b462d05139e86d3ddcd83dacf19377d0bd71f99528a22b3ea2827/diff:/var/lib/docker/overlay2/c798f33f303c8bd8b240ff7e4bd2b4ae90cb5075259c2c5972a0f728e8f70b69/diff:/var/lib/docker/overlay2/65e07f96d685e399e10ecbddaa06aeb54bc622ced5352b0bac40fe0d4ba116c4/diff:/var/lib/docker/overlay2/23e1eefd53e077441c8ae83b7deecc255f87e16e59a6278a43a20f495a05f9b4/diff:/var/lib/docker/overlay2/a3eafa1821792f1a5865ca91fc0f4824f6b7a467f8e63facf3b806ab3902c73d/diff:/var/lib/docker/overlay2/86ea6349034ee3afd8c604767c18df584b5135ab34417e391f73831777254c14/diff:/var/lib/docker/overlay2/e4f9e901779d2253788fd9b3928022adf6a37dcb7a8b7974e30a96ab92d7bb66/diff:/var/lib/docker/overlay2/58a14c2eb99d089690fed96a6496e80ba2c99ff89840ec4c041fde540784275e/diff",
+                "MergedDir": "/var/lib/docker/overlay2/4d36914e26a5002569ee62c107a12af6113dcc8bf1a9229d34bae0c1a61e5ad6/merged",
+                "UpperDir": "/var/lib/docker/overlay2/4d36914e26a5002569ee62c107a12af6113dcc8bf1a9229d34bae0c1a61e5ad6/diff",
+                "WorkDir": "/var/lib/docker/overlay2/4d36914e26a5002569ee62c107a12af6113dcc8bf1a9229d34bae0c1a61e5ad6/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "tp1_db-data",
+                "Source": "/var/lib/docker/volumes/tp1_db-data/_data",
+                "Destination": "/var/lib/postgresql/data",
+                "Driver": "local",
+                "Mode": "z",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "de9cb16e6095",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "5432/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "POSTGRES_USER=usr",
+                "POSTGRES_PASSWORD=pwd",
+                "POSTGRES_DB=db",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=en_US.utf8",
+                "PG_MAJOR=14",
+                "PG_VERSION=14.1",
+                "PG_SHA256=4d3c101ea7ae38982f06bdc73758b53727fb6402ecd9382006fa5ecc7c2ca41f",       
+                "PGDATA=/var/lib/postgresql/data"
+            ],
+            "Cmd": [
+                "postgres"
+            ],
+            "Image": "carottealpha/tp-devops-simple-api-database",
+            "Volumes": {
+                "/var/lib/postgresql/data": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "0b2a0531ee9a2f92c9770db31bc8b7feeb5f4551d413d947313777ea0dd548ac",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:1939e2ade38163c5b459fc8f89cf20a5a6de49ba7402f85e417fffd9636ff097",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "tp1",
+                "com.docker.compose.project.config_files": "C:\\Users\\richa\\Documents\\IRC\\4IRC\\DevOps\\git\\DevOps\\TP1\\docker-compose copy.yml",
+                "com.docker.compose.project.working_dir": "C:\\Users\\richa\\Documents\\IRC\\4IRC\\DevOps\\git\\DevOps\\TP1",
+                "com.docker.compose.service": "database",
+                "com.docker.compose.version": "2.15.1"
+            },
+            "StopSignal": "SIGINT"
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "9f5e7e76d05ec9212bb9dad2f6042453b1a690dcba223f375865098063c2c041",        
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "5432/tcp": null
+            },
+            "SandboxKey": "/var/run/docker/netns/9f5e7e76d05e",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "tp1_app-network": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "pg",
+                        "database",
+                        "de9cb16e6095"
+                    ],
+                    "NetworkID": "8d5407e8081e883a4fae3fe10f595d39e4f8e4b189fb1bf63414495ba2bcce8f",
+                    "EndpointID": "2cad36ed898bf69d5dd558f666f335a40239f8a835177c4cd73b9242867ac1c0",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:13:00:02",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+
+docker exec -it pg /bin/bash
+
+PS C:\Users\richa\Documents\IRC\4IRC\DevOps\git\DevOps> docker exec -it pg /bin/bash
+bash-5.1# psql -U usr
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  database "usr" does not exist
+
+psql -U usr -d db
+
+bash-5.1# psql -U usr -d db
+psql (14.1)
+Type "help" for help.
+
+db=# 
+
+db=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of
+-----------+------------------------------------------------------------+-----------
+ usr       | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+
+db=#
+
+bash-5.1# psql -U usr -d db
+psql (14.1)
+Type "help" for help.
+
+db=# ALTER ROLE usr PASSWORD 'pwd';
+ALTER ROLE
+db=#
