@@ -8,6 +8,8 @@
       URL: "{{ URL }}"
       USER: "{{ usr_name }}"
       PWD: "{{ pwd_usr }}"
+    networks:
+      - name: networkAPI
     recreate: yes
   vars:
     ansible_python_interpreter : /usr/bin/python3

@@ -125,3 +125,19 @@ Deleted: sha256:64b12c6bc6c4965717431921508606b1a9966748aa4def874364975d35cc1656
 [root@ip-10-0-1-52 centos]# docker images
 REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
 
+Supprimer tout !
+
+docker rm -f $(docker ps -a -q) 
+
+safe main.yml network
+
+---
+# tasks file for roles/network
+- name: Connect multiple containers to the network
+  community.docker.docker_network:
+    name: my-network
+    state: present
+    containers:
+      - database
+      - httpd
+      - api

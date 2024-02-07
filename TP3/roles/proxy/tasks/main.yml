@@ -5,7 +5,9 @@
     name: httpd
     image: carottealpha/tp-devops-simple-api-httpd
     ports: 
-      - "8080:80"
+      - "80:80"
+    networks:
+      - name: networkAPI
   vars:
     ansible_python_interpreter : /usr/bin/python3
     
