@@ -1,21 +1,8 @@
 version: '3.7'
 
 services:
-    backend:
-        image: carottealpha/tp1-backend 
-        networks:
-          - app-network    
-        environment:
-          URL: jdbc:postgresql://pg:5432/db
-          USER: usr
-          PWD: pwd      
-        depends_on:
-          - database
-        container_name: api
-        #TODO
-
     database:
-        image: carottealpha/tp1-database
+        image: carottealpha/tp-devops-simple-api-database
         networks:
           - app-network
         environment:
@@ -27,8 +14,21 @@ services:
         container_name: pg
         #TODO
 
+    backend:
+        image: carottealpha/tp-devops-simple-api
+        networks:
+          - app-network    
+        environment:
+          URL: jdbc:postgresql://pg:5432/db
+          USER: "usr"
+          PWD: "pwd"      
+        depends_on:
+          - database
+        container_name: api
+        #TODO
+
     httpd:
-        image: carottealpha/tp1-httpd
+        image: carottealpha/tp-devops-simple-api-httpd
         ports:
           - "80:80"
         networks:
@@ -50,8 +50,7 @@ services:
 
 
 networks:
-  app-network :
+  app-network:
 
 volumes:
   db-data:
-
