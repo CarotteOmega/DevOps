@@ -3,7 +3,7 @@
 - name: Run API
   docker_container:
     name: api
-    image: carottealpha/tp-devops-simple-api
+    image: carottealpha/tp-devops-simple-api:latest
     ports: 
       - "8081:80"
     env:
