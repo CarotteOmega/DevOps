@@ -12,16 +12,16 @@ services:
         volumes:
           - db-data:/var/lib/postgresql/data
         container_name: pg
-        #TODO
+        
 
     backend:
         image: carottealpha/tp-devops-simple-api
         networks:
           - app-network    
         environment:
-          URL: jdbc:postgresql://pg:5432/db
-          USER: "usr"
-          PWD: "pwd"      
+          URL: jdbc:postgresql://database:5432/db
+          USER: usr
+          PWD: pwd      
         depends_on:
           - database
         container_name: api
