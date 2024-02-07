@@ -1,0 +1,16 @@
+---
+# tasks file for roles/app
+- name: Run API
+  docker_container:
+    name: api
+    image: carottealpha/tp-devops-simple-api
+    ports: 
+      - "8081:80"
+    env:
+      URL: "{{ URL }}"
+      USER: "{{ usr_name }}"
+      PWD: "{{ pwd_usr }}"
+  vars:
+    ansible_python_interpreter : /usr/bin/python3
+
+  

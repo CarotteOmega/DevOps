@@ -4,8 +4,11 @@ services:
     backend:
         image: carottealpha/tp1-backend 
         networks:
-          - app-network
-        env_file: .env
+          - app-network    
+        environment:
+          URL: jdbc:postgresql://pg:5432/db
+          USER: usr
+          PWD: pwd      
         depends_on:
           - database
         container_name: api
@@ -15,6 +18,10 @@ services:
         image: carottealpha/tp1-database
         networks:
           - app-network
+        environment:
+          POSTGRES_DB: db
+          POSTGRES_USER: usr
+          POSTGRES_PASSWORD: pwd
         volumes:
           - db-data:/var/lib/postgresql/data
         container_name: pg

@@ -1,0 +1,12 @@
+---
+# tasks file for roles/network
+- name: Connect multiple containers to the network
+  community.docker.docker_network:
+    name: my-network
+    state: present
+    containers:
+      - database
+      - httpd
+      - api
+
+      
