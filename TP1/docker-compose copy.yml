@@ -5,10 +5,10 @@ services:
         image: carottealpha/tp-devops-simple-api-database
         networks:
           - app-network
-        environment:
-          POSTGRES_DB: 'db'
-          POSTGRES_USER: 'usr'
-          POSTGRES_PASSWORD: 'pwd'
+        environment: 
+          POSTGRES_DB: db
+          POSTGRES_USER: usr
+          POSTGRES_PASSWORD: pwd
         volumes:
           - db-data:/var/lib/postgresql/data
         container_name: pg
@@ -19,9 +19,9 @@ services:
         networks:
           - app-network    
         environment:
-          URL: 'jdbc:postgresql://database:5432/db'
-          USER: 'usr'
-          PWD: 'pwd'      
+          URL: jdbc:postgresql://database:5432/db
+          USER: usr
+          PWD: pwd      
         depends_on:
           - database
         container_name: api

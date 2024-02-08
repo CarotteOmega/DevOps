@@ -746,3 +746,29 @@ Type "help" for help.
 db=# ALTER ROLE usr PASSWORD 'pwd';
 ALTER ROLE
 db=#
+
+test avec un usernam
+e  qui n'existe pas :
+ource       : HikariPool-1 - Starting...
+pg             | 2024-02-07 23:22:08.339 UTC [29] FATAL:  password authentication failed for user "usrrrrr"
+pg             | 2024-02-07 23:22:08.339 UTC [29] DETAIL:  Role "usrrrrr" does not exist.
+pg             |        Connection matched pg_hba.conf line 100: "host all all all scram-sha-256"  
+
+PS C:\Users\richa\Documents\IRC\4IRC\DevOps\git\DevOps\TP1> docker logs pg                          
+      
+PostgreSQL Database directory appears to contain a database; Skipping initialization
+
+2024-02-08 07:00:55.722 UTC [1] LOG:  starting PostgreSQL 14.1 on x86_64-pc-linux-musl, compiled by gcc (Alpine 10.3.1_git20211027) 10.3.1 20211027, 64-bit
+2024-02-08 07:00:55.722 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-02-08 07:00:55.722 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-02-08 07:00:55.728 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"  
+2024-02-08 07:00:55.733 UTC [21] LOG:  database system was shut down at 2024-02-08 06:55:43 UTC     
+2024-02-08 07:00:55.740 UTC [1] LOG:  database system is ready to accept connections
+2024-02-08 07:01:00.090 UTC [28] FATAL:  password authentication failed for user "usr"
+2024-02-08 07:01:00.090 UTC [28] DETAIL:  Connection matched pg_hba.conf line 100: "host all all all scram-sha-256"
+2024-02-08 07:01:01.499 UTC [29] FATAL:  password authentication failed for user "usr"
+2024-02-08 07:01:01.499 UTC [29] DETAIL:  Connection matched pg_hba.conf line 100: "host all all all scram-sha-256"
+
+ENV POSTGRES_DB=db \
+   POSTGRES_USER=usr \
+   POSTGRES_PASSWORD=pwd
