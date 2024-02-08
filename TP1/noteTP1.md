@@ -23,7 +23,7 @@ docker run -p "8090:8080"  --net=app-network  --name=adminer -d adminer
 
 lancer API: 
 docker run -d -p  80:80  --name=api --network app-network carottealpha/api
-copy conof htp
+copy conf htp
 docker exec proxy cat /usr/local/apache2/conf/httpd.conf 
 ## Questions
 

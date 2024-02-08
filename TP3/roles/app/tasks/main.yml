@@ -3,15 +3,15 @@
 - name: Run API
   docker_container:
     name: api
-    image: carottealpha/tp-devops-simple-api:latest
+    image: mathismrg/tp1-backend:latest
     env:
-      URL: "{{ URL }}"
-      USER: "{{ usr_name }}"
-      PWD: "{{ pwd_usr }}"
+      DB_URL: "{{ URL }}"
+      DB_username: "{{ usr_name }}"
+      DB_password: "{{ pwd_usr }}"
     networks:
       - name: networkAPI
     recreate: yes
-    pull: yes
+
   vars:
     ansible_python_interpreter : /usr/bin/python3
 

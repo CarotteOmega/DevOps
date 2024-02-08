@@ -3,7 +3,7 @@
 - name: Run database
   docker_container:
     name: database
-    image: carottealpha/tp-devops-simple-api-database:latest
+    image: carottealpha/db:1.0
     volumes:
       - /var/lib/postgresql/data
     env: 

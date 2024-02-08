@@ -3,7 +3,7 @@
 - name: Run HTTPD
   docker_container:
     name: httpd
-    image: carottealpha/tp-devops-simple-api-httpd
+    image: carottealpha/httpd:1.0
     ports: 
       - "80:80"
     networks:

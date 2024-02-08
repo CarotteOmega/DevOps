@@ -2,10 +2,11 @@ version: '3.7'
 
 services:
     database:
-        image: carottealpha/tp-devops-simple-api-database
+        image: carottealpha/db:1.0
         networks:
           - app-network
         environment: 
+
           POSTGRES_DB: db
           POSTGRES_USER: usr
           POSTGRES_PASSWORD: pwd
@@ -15,7 +16,7 @@ services:
         
 
     backend:
-        image: carottealpha/tp-devops-simple-api
+        image: carottealpha/app:1.0
         networks:
           - app-network    
         environment:
@@ -25,11 +26,12 @@ services:
         depends_on:
           - database
           - httpd
+        container_name: api
         
         
 
     httpd:
-        image: carottealpha/tp-devops-simple-api-httpd
+        image: carottealpha/httpd:1.0
         ports:
           - "80:80"
         networks:
