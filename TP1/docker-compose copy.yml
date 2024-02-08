@@ -5,7 +5,6 @@ services:
         image: carottealpha/tp-devops-simple-api-database
         networks:
           - app-network
-  
         environment: 
           POSTGRES_DB: db
           POSTGRES_USER: usr
@@ -13,8 +12,6 @@ services:
         volumes:
           - db-data:/var/lib/postgresql/data
         container_name: pg
-        recreate: yes
-        pull: yes
         
 
     backend:
@@ -29,8 +26,6 @@ services:
           - database
           - httpd
         container_name: api
-        recreate: yes
-        pull: yes
         #TODO
 
     httpd:
@@ -41,8 +36,6 @@ services:
           - app-network
 
         container_name: proxy
-        recreate: yes
-        pull: yes
         #TODO
 
     adminer:
@@ -54,8 +47,6 @@ services:
           - app-network
         depends_on:
           - database
-        recreate: yes
-        pull: yes
 
 
 networks:
