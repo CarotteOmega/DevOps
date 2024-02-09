@@ -39,3 +39,9 @@ jobs:
           context: ./TP1/Htpp/
           tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-simple-api-httpd
           push: ${{ github.ref == 'refs/heads/main' }}
+      - name: Build image and push front
+        uses: docker/build-push-action@v3
+        with:
+          context: ./TP1/front/
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-simple-api-front
+          push: ${{ github.ref == 'refs/heads/main' }}

@@ -7,6 +7,7 @@ services:
         
         networks:
           - app-network
+          - db-network
         environment:
           URL: jdbc:postgresql://datase:5432/db
           USER: usr
@@ -23,14 +24,14 @@ services:
         build:
           context: ./Base
         networks:
-          - app-network
+          - db-network
         environment:
           POSTGRES_DB: db
           POSTGRES_USER: usr
           POSTGRES_PASSWORD: pwd
         volumes:
           - db-data:/var/lib/postgresql/data
-        container_name: pg
+
         #TODO
 
     httpd:
@@ -38,9 +39,10 @@ services:
         ports:
           - "80:80"
         networks:
-          - app-network
+          - app-network     
         depends_on:
           - backend
+        
         container_name: proxy
         #TODO
 
@@ -48,15 +50,23 @@ services:
         image: adminer
         restart: always
         ports:
-          - 8090:800
+          - 8090:8080
         networks:
           - app-network
         depends_on:
           - database
-
+    frontend:
+        build: ./front
+        networks:
+            - app-network
+        depends_on:
+            - httpd
+        environment:
+            - VUE_APP_API_URL=http://localhost:80/api    
 
 networks:
   app-network :
+  db-network :
 
 volumes:
   db-data:

@@ -772,3 +772,7 @@ PostgreSQL Database directory appears to contain a database; Skipping initializa
 ENV POSTGRES_DB=db \
    POSTGRES_USER=usr \
    POSTGRES_PASSWORD=pwd
+
+REfaire tout le tp depuis le début 
+
+![alt text](image-6.png)

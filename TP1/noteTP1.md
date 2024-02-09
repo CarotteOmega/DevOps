@@ -4,6 +4,16 @@ Dans un terminal etre dans le dossier TP1/Base lancer  la commande suivante:
 
 docker build -t carottealpha/base .
 
+Creation d'un network  pour les containers :
+
+```` 
+docker  network create bd-network
+````
+
+Creation d'un volume :
+
+````
+ docker volumer create 
 Puis lancer  le container avec cette image en utilisant la commande dans un reseau  docker (voir plus bas) :
 docker run -d -p  5433:5432 --name=pg carottealpha/base 
 docker run -d -p  5433:5432 --name=pg --network app-network carottealpha/base 
